@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>সোম সংবাদ - Flipbook</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap" rel="stylesheet">
+  <style>
+    body { margin:0; background:#f6efdf; font-family: 'Noto Sans Bengali', sans-serif; -webkit-font-smoothing:antialiased; }
+    .container { max-width:1000px; margin:20px auto; }
+    #flipbook { width: 100%; height: 720px; margin: 0 auto; }
+    #flipbook .page { width: 100%; height: 100%; }
+    #flipbook .page img { width:100%; height:100%; object-fit:contain; display:block; }
+    .controls { text-align:center; margin:10px 0; }
+    .controls button { padding:8px 14px; margin:0 6px; border-radius:6px; border:none; background:#283a63; color:white; cursor:pointer; }
+    footer { text-align:center; color:#333; margin:14px 0 40px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 style="text-align:center; color:#283a63; margin-bottom:6px;">সোম সংবাদ — ২৭ অক্টোবর, ২০২৫</h2>
+    <div class="controls">
+      <button id="prevBtn">◀ Previous</button>
+      <button id="nextBtn">Next ▶</button>
+      <a href="সোম_সংবাদ_২৭.১০.২০২৫_ফাইনাল_সংস্করণ_নতুন_কভারসহ.pdf" download style="margin-left:12px; color:#283a63;">Download PDF</a>
+    </div>
+    <div id="flipbook">
+      <div class="page"><img src="pages/page_001.png" alt="page"></div>\n      <div class="page"><img src="pages/page_002.png" alt="page"></div>\n      <div class="page"><img src="pages/page_003.png" alt="page"></div>\n      <div class="page"><img src="pages/page_004.png" alt="page"></div>\n      <div class="page"><img src="pages/page_005.png" alt="page"></div>\n      <div class="page"><img src="pages/page_006.png" alt="page"></div>\n      <div class="page"><img src="pages/page_007.png" alt="page"></div>\n      <div class="page"><img src="pages/page_008.png" alt="page"></div>\n      <div class="page"><img src="pages/page_009.png" alt="page"></div>\n      <div class="page"><img src="pages/page_010.png" alt="page"></div>\n      <div class="page"><img src="pages/page_011.png" alt="page"></div>\n      <div class="page"><img src="pages/page_012.png" alt="page"></div>\n      <div class="page"><img src="pages/page_013.png" alt="page"></div>\n      <div class="page"><img src="pages/page_014.png" alt="page"></div>\n      <div class="page"><img src="pages/page_015.png" alt="page"></div>\n      <div class="page"><img src="pages/page_016.png" alt="page"></div>\n      <div class="page"><img src="pages/page_017.png" alt="page"></div>\n      <div class="page"><img src="pages/page_018.png" alt="page"></div>\n      <div class="page"><img src="pages/page_019.png" alt="page"></div>\n      <div class="page"><img src="pages/page_020.png" alt="page"></div>\n      <div class="page"><img src="pages/page_021.png" alt="page"></div>\n      <div class="page"><img src="pages/page_022.png" alt="page"></div>\n      <div class="page"><img src="pages/page_023.png" alt="page"></div>\n      <div class="page"><img src="pages/page_024.png" alt="page"></div>\n      <div class="page"><img src="pages/page_025.png" alt="page"></div>\n      <div class="page"><img src="pages/page_026.png" alt="page"></div>\n      <div class="page"><img src="pages/page_027.png" alt="page"></div>\n      <div class="page"><img src="pages/page_028.png" alt="page"></div>\n      <div class="page"><img src="pages/page_029.png" alt="page"></div>\n      <div class="page"><img src="pages/page_030.png" alt="page"></div>\n      <div class="page"><img src="pages/page_031.png" alt="page"></div>\n      <div class="page"><img src="pages/page_032.png" alt="page"></div>\n      <div class="page"><img src="pages/page_033.png" alt="page"></div>\n      <div class="page"><img src="pages/page_034.png" alt="page"></div>\n      <div class="page"><img src="pages/page_035.png" alt="page"></div>\n      <div class="page"><img src="pages/page_036.png" alt="page"></div>\n      <div class="page"><img src="pages/page_037.png" alt="page"></div>\n      <div class="page"><img src="pages/page_038.png" alt="page"></div>\n      <div class="page"><img src="pages/page_039.png" alt="page"></div>\n      <div class="page"><img src="pages/page_040.png" alt="page"></div>\n      <div class="page"><img src="pages/page_041.png" alt="page"></div>\n      <div class="page"><img src="pages/page_042.png" alt="page"></div>\n      <div class="page"><img src="pages/page_043.png" alt="page"></div>\n      <div class="page"><img src="pages/page_044.png" alt="page"></div>\n
+    </div>
+    <footer>© সোম সংবাদ — সম্পাদক: দেবাশিস চক্রবর্তী | dbss2000in@proton.me</footer>
+  </div>
+
+  <!-- turn.js from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+  <script>
+    // Initialize flipbook
+    const flipbook = document.getElementById('flipbook');
+    // Wrap pages into a container for turn.js
+    const pages = Array.from(flipbook.querySelectorAll('.page'));
+    const wrapper = document.createElement('div');
+    wrapper.id = 'book';
+    wrapper.style.width = '100%';
+    wrapper.style.height = '720px';
+    pages.forEach(p => wrapper.appendChild(p));
+    flipbook.appendChild(wrapper);
+
+    // Use turn.js if available
+    function initTurn() {
+      if (typeof jQuery === 'undefined' || typeof $(wrapper).turn !== 'function') {
+        // Try to load jQuery then initialize turn.js
+        const jq = document.createElement('script'); jq.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
+        jq.onload = () => { $(wrapper).turn({width: '100%', height: 720, autoCenter: true}); };
+        document.head.appendChild(jq);
+      } else {
+        $(wrapper).turn({width: '100%', height: 720, autoCenter: true});
+      }
+    }
+    initTurn();
+
+    document.getElementById('prevBtn').addEventListener('click', ()=> { $(wrapper).turn('previous'); });
+    document.getElementById('nextBtn').addEventListener('click', ()=> { $(wrapper).turn('next'); });
+  </script>
+</body>
+</html>
